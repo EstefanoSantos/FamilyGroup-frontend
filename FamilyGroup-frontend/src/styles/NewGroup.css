@@ -1,0 +1,37 @@
+.container-div {
+    background-color: #BC8F8F;
+}
+
+#form-div {
+   height: 700px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 2px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2em;
+}
+
+label {
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+input {
+    border: solid 1px;
+    border-radius: 3px;
+}
+
+button {
+    margin-top: 10px;
+    border: solid 1px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+

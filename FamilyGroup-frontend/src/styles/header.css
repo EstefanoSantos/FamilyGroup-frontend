@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #27272a;
+}
+
+.header {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: #3f3cbb;
+    box-sizing: border-box;    
+    border-style: unset;
+}
+
+nav {
+    width: 300px;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #b69ecc;
+    border-radius: 10px;
+    
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    background-color: #dec2f7;
+}
+
+.user-found, .user-not-found {
+    position: absolute;
+    padding-top: 70px;
+    
+}
+
+.user-found {
+    font-size: 12px;
+    color: white;
+}
+
+.user-not-found {
+    color: red;
+    font-size: 12px;
+}
+
+.form-container {
+    width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.form-container label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.form-container input { 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#find-buttom {
+    background-color: rgb(78, 78, 202);
+    font-family: monospace;
+    font-size: 17px;
+    margin: 0;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#find-buttom:hover {
+    background-color: bisque;
+}
+
+
+
+
+
+
+

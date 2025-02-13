@@ -85,7 +85,6 @@ export default function HeaderComponent() {
         <p><a href="#">Group</a></p>
         <p><a href="#">My groups</a></p>
       </nav>
-      <HeadersForm />
     </div>
   )
 }

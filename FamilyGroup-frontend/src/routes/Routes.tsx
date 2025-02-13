@@ -1,52 +1,48 @@
 import { RouterProvider, createBrowserRouter } from "react-router";
-import { useAuth } from "../hooks/useAuth";
 import { ProtectedRoute } from "./ProtectedRoute";
-import NewUserForm from "../components/NewUser";
 import Group from "../components/Group";
 import NewGroup from "../components/NewGroup";
+import Login from "../components/Login";
+import NewUser from "../components/NewUser";
+import HeaderComponent from "../components/HeadersComponent";
+import Footer from "../components/Footer";
 
 const Routes = () => {
-    const {token} = useAuth();
 
+    const MainLayout = ({ children }: { children: React.ReactNode}) => {
+        return (
+        <>
+            <HeaderComponent />
+            { children }
+            <Footer />
+        </>
+        )
+    }
 
-const routesForPublic = [
-    {
-        path: "/",
-        element: <NewUserForm />,
-    },
-];
+    const routes = createBrowserRouter([
+        //public routes
+        {
+            path: "/",
+            element: <MainLayout> <Login /> </MainLayout>
+        },
+        {
+            path: "/new-user",
+            element: <MainLayout> <NewUser /> </MainLayout>
+        },
 
-const routesForAuthenticatedOnly = [
-    {
-        path: "/",
-        element: <ProtectedRoute />,
-        children: [
-            {
-                path: "/group",
-                element: <Group />,
-            },
-            {
-                path: "/new-group",
-                element: <NewGroup />
-            },
-        ],
-    },
-];
+        //protected routes, only for authenticated users
 
-const routesForNonAuthenticated = [
-    {
-        path: "/new-user",
-        element: <div>Create User Page</div>
-    },
-];
+        {
+            path: "/",
+            element: <ProtectedRoute />,
+            children: [
+                { path: "/group", element: <MainLayout> <Group /> </MainLayout> },
+                { path: "/new-group", element: <MainLayout> <NewGroup /> </MainLayout> } 
+            ],
+        },
+    ]);
 
-const router = createBrowserRouter([
-    ...routesForPublic,
-    ...(!token ? routesForNonAuthenticated : []),
-    ...routesForAuthenticatedOnly,
-]);
-
-return <RouterProvider router={router} />
+return <RouterProvider router={routes} />
 
 };
 

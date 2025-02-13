@@ -20,7 +20,8 @@ export default function NewUserForm() {
         try {
             await api.post("/user/createUser", {
                 username: data.username,
-                password: data.password
+                email: data.email,
+                password: data.password,
             });
             console.log("Usuário criado com sucesso!");
         } catch(error) {
@@ -31,7 +32,7 @@ export default function NewUserForm() {
     return (
         <div className="app-container">
             <div className='main'>
-                <h2>Do your thing!</h2>
+                <h2>Create account</h2>
                 <div className="form-group">
                     <input 
                         type="text" 

@@ -1,4 +1,6 @@
 footer {
+    position: fixed;
+    top: 697px;
     background-color: #3f3cbb;
     text-align: center;
     color: white;
